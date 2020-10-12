@@ -5,8 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout project
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Setup composer
-      - run:  composer install --prefer-dist --no-progress --no-suggest
-      - name: run phpunit
-      - run:  composer test
+        run:  composer install --prefer-dist --no-progress --no-suggest
+      - name: run appropriate checks
+        run:  composer pp
+
